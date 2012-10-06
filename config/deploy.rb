@@ -1,6 +1,3 @@
-# Add RVM's lib directory to the load path.
-#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 require 'capistrano/ext/multistage'
@@ -8,9 +5,6 @@ load 'deploy/assets'
 
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
-
-#set :whenever_command, "bundle exec whenever"
-#require 'whenever/capistrano'
 
 set :user, 'pizza'
 set :application, 'pizza-crusts'
