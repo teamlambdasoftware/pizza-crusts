@@ -1,0 +1,27 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: pizza_crusts_development
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  database: pizza_crusts_test
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+cucumber:
+  <<: *test
