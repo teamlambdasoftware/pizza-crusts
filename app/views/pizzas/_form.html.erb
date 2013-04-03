@@ -23,6 +23,13 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
+  <div class="field">
+    <% if @pizza.delivered? %>
+        <b>This pizza has been delivered!</b>
+    <% else %>
+        <i>This pizza hasn't been delivered yet.</i>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

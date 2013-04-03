@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @pizza %> |
-<%= link_to 'Back', pizzas_path %>
+<%= link_to 'Back', pizzas_path %> |
+<%= link_to 'Deliver', deliver_pizza_path(@pizza) %>

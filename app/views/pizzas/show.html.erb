@@ -15,6 +15,13 @@
   <%= @pizza.price %>
 </p>
 
+<p>
+  <% if @pizza.delivered? %>
+      <b>This pizza has been delivered!</b>
+  <% else %>
+      <i>This pizza hasn't been delivered yet.</i>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_pizza_path(@pizza) %> |
 <%= link_to 'Back', pizzas_path %>

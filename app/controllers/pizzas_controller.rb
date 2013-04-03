@@ -80,4 +80,15 @@ class PizzasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /pizza/1/deliver
+  def deliver
+    @pizza = Pizza.find(params[:id])
+    Pizza.delay.deliver_pizza(@pizza.id)
+    respond_to do |format|
+      format.html { redirect_to @pizza, notice: 'Pizza is on its way!' }
+      format.json { head :no_content }
+    end
+  end
+
 end
